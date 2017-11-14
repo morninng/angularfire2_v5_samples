@@ -1,0 +1,41 @@
+<p>
+  list works!
+</p>
+
+
+<ul>
+  <li *ngFor="let item of items | async">
+     {{ item | json }}
+  </li>
+</ul>
+
+item_info
+<ul>
+  <li *ngFor="let item of item_info | async">
+     {{ item | json }} <button (click)='update(item.key)'>update</button>
+     <button (click)='delete(item.key)'>delete</button>
+  </li>
+</ul>
+
+
+
+
+<button (click)="add()">add</button>
+
+found_items$
+
+<ul>
+  <li *ngFor="let item of found_items$ | async">
+{{ item | json }} 
+</li>
+</ul>
+
+
+found_items2$
+
+<ul>
+  <li *ngFor="let item of found_items2$ | async">
+{{ item | json }} {{ item.payload }} 
+{{ item.key }} 
+</li>
+</ul>
